@@ -1,9 +1,12 @@
-import UilReact from '@iconscout/react-unicons/icons/uil-react'
+import UilReact from "@iconscout/react-unicons/icons/uil-react";
+import SearchBar from "./components/SearchBar";
+import TimeAndLoc from "./components/TimeAndLoc";
 
 function App() {
   return (
-    <div>
-
+    <div className="shadow-grey-400 mx-auto mt-4 h-fit max-w-screen-md bg-gradient-to-br from-cyan-700 to-blue-700 py-5 px-32 shadow-xl">
+      <SearchBar />
+      <TimeAndLoc />
     </div>
   );
 }
