@@ -3,7 +3,7 @@ import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
 
 const SearchBar = () => {
   return (
-    <div className="my-6 flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <div className="my-4 flex flex-row justify-center text-white">
         <h1 className="text-xl sm:text-3xl">Check out a city's weather</h1>
       </div>
