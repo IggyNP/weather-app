@@ -5,20 +5,20 @@ const SearchBar = () => {
   return (
     <div className="my-6 flex flex-col items-center justify-center">
       <div className="my-4 flex flex-row justify-center text-white">
-        <h1 className="text-2xl">Check out a city's weather</h1>
+        <h1 className="text-xl sm:text-3xl">Check out a city's weather</h1>
       </div>
-      <div className="flex w-3/4 flex-row items-center justify-center space-x-4">
+      <div className="flex w-full flex-row items-center justify-center space-x-4">
         <input
           type="text"
           placeholder="search..."
-          className="w-full p-2 text-xl font-light capitalize shadow-xl placeholder:lowercase focus:outline-none"
+          className="text-l w-full p-2 font-light capitalize shadow-xl placeholder:lowercase focus:outline-none sm:text-xl"
         />
         <UilSearch
-          size={25}
+          size={30}
           className="cursor-pointer text-white transition ease-out hover:scale-125"
         />
         <UilLocationPoint
-          size={25}
+          size={30}
           className="cursor-pointer text-white transition ease-out hover:scale-125"
         />
         <div className="flex w-1/4 flex-row items-center justify-center">
