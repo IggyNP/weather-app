@@ -1,10 +1,10 @@
 import React from "react";
 
-const Forecast = ({ title }) => {
+const Forecast = () => {
   return (
     <div className="text-white">
       <div className="mt-6 flex items-center justify-start">
-        <p className="font-medium uppercase">{title}</p>
+        <p className="font-medium uppercase">Daily Forecast</p>
       </div>
       <hr className="my-2" />
       <div className="flex flex-row items-center justify-between">
