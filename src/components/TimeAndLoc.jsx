@@ -1,16 +1,24 @@
 import React from "react";
+import { DateTime } from "luxon";
 
-const TimeAndLoc = () => {
+const TimeAndLoc = ({ apiData }) => {
+  const localTime = DateTime.local()
+    .setZone(apiData.location.timezone_id)
+    .toLocaleString(DateTime.TIME_SIMPLE);
+  const date = DateTime.local()
+    .setZone(apiData.location.timezone_id)
+    .toFormat("cccc, dd LLLL yyyy");
+
   return (
     <div>
       <div className="my-6 flex items-center justify-center">
         <p className="text-l font-extralight text-white sm:text-xl">
-          Tuesday, 22 March 2023 | Local time: 05:40 PM
+          {date} | Local time: {localTime}
         </p>
       </div>
       <div className="my-3 flex items-center justify-center">
         <p className="text-2xl font-medium text-white sm:text-3xl">
-          Marbella, Spain
+          {apiData.location.city}, {apiData.location.country}
         </p>
       </div>
     </div>

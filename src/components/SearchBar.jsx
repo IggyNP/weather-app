@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
+import getWeatherData from "../api/weatherApi";
 
-const SearchBar = () => {
+const SearchBar = ({ setApiData }) => {
+  const [city, setCity] = useState("Marbella");
+
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="my-4 flex flex-row justify-center text-white">
@@ -9,11 +12,18 @@ const SearchBar = () => {
       </div>
       <div className="flex w-full flex-row items-center justify-center space-x-4">
         <input
+          onChange={(e) => {
+            setCity(e.target.value);
+          }}
           type="text"
           placeholder="search..."
           className="text-l w-full p-2 font-light capitalize shadow-xl placeholder:lowercase focus:outline-none sm:text-xl"
         />
         <UilSearch
+          onClick={() => {
+            console.log(city);
+            getWeatherData(city, "c", setApiData);
+          }}
           size={30}
           className="cursor-pointer text-white transition ease-out hover:scale-125"
         />
