@@ -1,4 +1,5 @@
 import React from "react";
+import getImageUrl from "../utils/getImageUrl";
 import {
   UilArrowDownRight,
   UilTear,
@@ -11,6 +12,7 @@ import {
 
 const TempAndInfo = ({ apiData }) => {
   console.log(apiData);
+
   if (apiData)
     return (
       <div>
@@ -19,7 +21,7 @@ const TempAndInfo = ({ apiData }) => {
         </div>
         <div className="flex w-full flex-row items-center justify-between py-3 text-white">
           <img
-            src="https://openweathermap.org/img/wn/01d@2x.png"
+            src={getImageUrl(apiData.current_observation.condition.text)}
             alt=""
             className="w-20"
           />
