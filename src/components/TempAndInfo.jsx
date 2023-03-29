@@ -11,8 +11,6 @@ import {
 } from "@iconscout/react-unicons";
 
 const TempAndInfo = ({ apiData }) => {
-  console.log(apiData);
-
   if (apiData)
     return (
       <div>

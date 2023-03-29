@@ -43,9 +43,11 @@ const getImageUrl = (conditionText) => {
     case "mostly cloudy":
     case "partly cloudy":
     case "partly sunny":
+    case "mostly clear":
       return "https://openweathermap.org/img/wn/02d.png";
     case "clear":
     case "sunny":
+    case "mostly sunny":
       return "https://openweathermap.org/img/wn/01d.png";
     default:
       return "";

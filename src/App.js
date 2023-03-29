@@ -12,7 +12,7 @@ function App() {
       <SearchBar setApiData={setApiData} />
       <TimeAndLoc apiData={apiData} />
       <TempAndInfo apiData={apiData} />
-      <Forecast />
+      <Forecast apiData={apiData} />
     </div>
   );
 }
