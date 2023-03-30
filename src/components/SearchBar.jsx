@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
 import getWeatherData from "../api/weatherApi";
 
 const SearchBar = ({ setApiData }) => {
-  const [city, setCity] = useState("Marbella");
+  const [city, setCity] = useState();
+  const [units, setUnits] = useState("c");
+
+  const handleUseWeatherApi = (city, units, setApiData) => {
+    getWeatherData(city, units, setApiData);
+  };
+
+  useEffect(() => {
+    handleUseWeatherApi(city, units, setApiData);
+  }, [units]);
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -15,14 +24,18 @@ const SearchBar = ({ setApiData }) => {
           onChange={(e) => {
             setCity(e.target.value);
           }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleUseWeatherApi(city, units, setApiData);
+            }
+          }}
           type="text"
           placeholder="search..."
           className="text-l w-full p-2 font-light capitalize shadow-xl placeholder:lowercase focus:outline-none sm:text-xl"
         />
         <UilSearch
           onClick={() => {
-            console.log(city);
-            getWeatherData(city, "c", setApiData);
+            handleUseWeatherApi(city, units, setApiData);
           }}
           size={30}
           className="cursor-pointer text-white transition ease-out hover:scale-125"
@@ -35,6 +48,9 @@ const SearchBar = ({ setApiData }) => {
           <button
             name="metric"
             className="text-xl font-light text-white transition ease-out hover:scale-125"
+            onClick={() => {
+              setUnits("c");
+            }}
           >
             °C
           </button>
@@ -42,6 +58,9 @@ const SearchBar = ({ setApiData }) => {
           <button
             name="imperial"
             className="text-xl font-light text-white transition ease-out hover:scale-125"
+            onClick={() => {
+              setUnits("f");
+            }}
           >
             °F
           </button>

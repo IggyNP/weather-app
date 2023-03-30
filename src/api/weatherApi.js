@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const getWeatherData = (
-  location = "Madrid",
-  unit = "c",
+  location,
+  unit,
   setStateData,
   setStateError = () => {}
 ) => {

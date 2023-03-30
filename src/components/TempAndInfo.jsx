@@ -24,7 +24,7 @@ const TempAndInfo = ({ apiData }) => {
             className="w-20"
           />
           <p className="text-5xl text-white sm:text-7xl">
-            {apiData.current_observation.condition.temperature} °C
+            {apiData.current_observation.condition.temperature} °
           </p>
           <div className="flex flex-col space-y-2">
             <div className="flex items-center justify-center text-sm font-light">
@@ -50,7 +50,7 @@ const TempAndInfo = ({ apiData }) => {
             </div>
           </div>
         </div>
-        <div className="flex w-full flex-row items-center justify-center space-x-2 py-3 text-sm text-white">
+        <div className="flex w-full flex-row items-center justify-center space-x-2 py-6 text-sm text-white">
           <UilSun />
           <p className="font-light">
             Rise:{" "}
@@ -71,7 +71,7 @@ const TempAndInfo = ({ apiData }) => {
           <p className="font-light">
             High:{" "}
             <span className="ml-1 font-medium">
-              {apiData.forecasts[0].high} °C
+              {apiData.forecasts[0].high} °
             </span>
           </p>
           <p className="ml-1 font-light">|</p>
@@ -80,7 +80,7 @@ const TempAndInfo = ({ apiData }) => {
             Low:{" "}
             <span className="ml-1 font-medium">
               {" "}
-              {apiData.forecasts[0].low} °C
+              {apiData.forecasts[0].low} °
             </span>
           </p>
         </div>
